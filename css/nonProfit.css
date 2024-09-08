@@ -1,0 +1,598 @@
+* {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 50px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-nav a:hover {
+  background-color: #555;
+  border-radius: 5px;
+  color: #007bff;
+}
+
+/* Submenu styles */
+.menu-item {
+  position: relative;
+  display: inline-block;
+}
+
+.submenu {
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  display: none;
+}
+
+.submenu a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.submenu a:hover {
+  background-color: #555;
+}
+
+.menu-item:hover .submenu {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.urban-forestry-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light background for contrast */
+}
+
+.urban-forestry-content {
+  flex: 1;
+  margin-right: 20px; /* Spacing between text and image */
+}
+
+.urban-forestry-image img {
+  width: 100%;
+  max-width: 600px; /* Adjust based on your layout needs */
+  height: auto;
+}
+
+.download-guide {
+  background-color: #007bff; /* Bootstrap primary button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.download-guide:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.urban-forestry-elements {
+  text-align: center;
+  background-color: #f5f5f5; /* Light background for contrast */
+  padding: 20px 0;
+}
+
+.urban-forestry-elements p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.urban-forestry-elements {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.urban-forestry-elements h2 {
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  color: #333;
+}
+
+.urban-forestry-elements h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background-color: #007bff; /* Blue underline */
+}
+
+.elements-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.element {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding shadow */
+  text-align: left;
+  border-bottom: 3px solid transparent; /* Optional if you want a hover effect */
+}
+
+.element:hover {
+  border-bottom: 3px solid #007bff; /* Blue underline on hover */
+}
+
+.element i {
+  font-size: 24px; /* Adjust icon size */
+  color: #007bff; /* Blue icons */
+}
+
+.element img {
+  width: 50px; /* Fixed size for icons */
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.element h3 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.element p {
+  color: #666;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .elements-grid {
+    flex-direction: column;
+  }
+
+  .element {
+    width: 100%; /* Full width on smaller screens */
+    margin: 10px 0;
+  }
+}
+
+.community-engagement-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #f4f4f4; /* Light background color for the section */
+}
+
+.community-engagement-content {
+  width: 50%;
+  padding-right: 20px;
+}
+
+.community-engagement-content h2 {
+  color: #003366; /* Dark blue color for the header */
+  margin-bottom: 10px;
+}
+
+.community-engagement-content p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.community-engagement-content ul {
+  list-style-type: none; /* No bullets */
+  padding: 0;
+}
+
+.community-engagement-content ul li {
+  padding: 5px 0;
+  border-left: 4px solid #007bff; /* Blue vertical line for list items */
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.community-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between action items */
+}
+
+/* Styling for action items */
+.action-item {
+  background-color: #004c8c; /* Dark blue background */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  color: white; /* White text for better readability */
+  padding: 10px; /* Adjust padding as needed */
+  margin: 5px 0; /* Space between items */
+  border-radius: 5px; /* Optional rounded corners */
+}
+
+.action-item:hover {
+  background-color: #007bff; /* Lighter blue on hover */
+}
+
+.action-item i {
+  color: white; /* White icons */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.action-item p {
+  margin: 0; /* Remove default margin */
+}
+
+.community-engagement-image {
+  width: 40%;
+}
+
+.community-engagement-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Styling for community engagement section or action items */
+.community-engagement-section {
+  background-color: #a1a1a1; /* Dark blue background */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.action-item:hover {
+  background-color: #007bff; /* Lighter blue on hover */
+}
+
+/* Ensuring text and icons are visible against the dark background */
+.community-engagement-section h2,
+.community-engagement-section p,
+.community-engagement-section li,
+.action-item p {
+  color: white; /* White text for better readability */
+}
+
+.community-engagement-section i,
+.action-item i {
+  color: white; /* White icons */
+}
+
+/* Additional hover effects for icons to match the theme */
+.community-engagement-section i:hover,
+.action-item i:hover {
+  color: #ade1f9; /* Even lighter blue for icon hover */
+}
+
+.measure-impact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #fdfdfd; /* Adjust the background color as per design */
+}
+
+.content-left {
+  width: 60%;
+}
+
+.content-right {
+  width: 40%;
+}
+
+.content-right img {
+  width: 100%;
+  height: auto;
+}
+
+h2,
+h3 {
+  color: #004c8c; /* Dark blue as per your theme */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 5px 0;
+  border-left: 4px solid #007bff; /* Blue vertical line for list items */
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.planit-geo-actions {
+  background-color: #f4f4f4; /* Light grey background */
+  padding: 20px;
+  border-radius: 5px; /* Optional rounded corners */
+}
+
+.planit-geo-actions h3 {
+  color: #004c8c; /* Dark blue, matching your header color */
+  margin-bottom: 10px;
+}
+
+.planit-geo-can {
+  background-color: #ffffff; /* Background for actionable items */
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.planit-geo-can ul li {
+  background-color: #e6f4ff; /* Light blue background for items */
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.funding-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: start; /* Aligns items to the start */
+  padding: 20px;
+  border-bottom: 1px solid #ccc; /* Separator line */
+}
+
+.content-section {
+  width: 60%; /* Allocate 60% width to text content */
+}
+
+.content-header h2 {
+  color: #0056b3; /* Blue color for the heading */
+  margin-bottom: 10px;
+}
+
+.content-header p {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.planit-geo-actions .action-item {
+  background-color: #004c8c; /* Dark blue background */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  color: white; /* White text for better readability */
+  padding: 10px; /* Adjust padding as needed */
+  margin: 5px 0; /* Space between items */
+  border-radius: 5px; /* Optional rounded corners */
+}
+
+.planit-geo-actions .action-item:hover {
+  background-color: #007bff; /* Lighter blue on hover */
+}
+
+.image-container {
+  width: 40%; /* Allocate 40% width to images */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.monitoring-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: start; /* Aligns items to the start */
+  padding: 20px;
+  border-bottom: 1px solid #ccc; /* Separator line */
+}
+
+.monitoring-section .content-section {
+  width: 60%; /* Allocate 60% width to text content */
+}
+
+.monitoring-section .content-header h2 {
+  color: #0056b3; /* Blue color for the heading */
+  margin-bottom: 10px;
+}
+
+.monitoring-section .content-header p {
+  margin-bottom: 20px;
+}
+
+.monitoring-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.monitoring-section .planit-geo-actions .action-item {
+  background-color: #004c8c; /* Dark blue background */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  color: white; /* White text for better readability */
+  padding: 10px; /* Adjust padding as needed */
+  margin: 5px 0; /* Space between items */
+  border-radius: 5px; /* Optional rounded corners */
+}
+
+.monitoring-section .planit-geo-actions .action-item:hover {
+  background-color: #007bff; /* Lighter blue on hover */
+}
+
+.monitoring-section .image-container {
+  width: 40%; /* Allocate 40% width to images */
+}
+
+.monitoring-section .image-container img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .measure-impact-section,
+  .funding-section,
+  .monitoring-section {
+    flex-direction: column;
+  }
+
+  .content-left,
+  .content-right,
+  .content-section,
+  .image-container {
+    width: 100%;
+  }
+
+  .content-right img,
+  .image-container img {
+    margin-top: 20px;
+  }
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+footer .footer-section {
+  flex: 1;
+  padding: 10px;
+}
+
+footer .footer-section h3 {
+  border-bottom: 2px solid #0082c6;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+footer .footer-section p,
+footer .footer-section a {
+  color: white;
+  text-decoration: none;
+}
+
+footer .footer-section .social-icons a {
+  margin-right: 10px;
+}
+
+footer .footer-section .social-icons img {
+  height: 20px;
+}
+
+footer .footer-form input,
+footer .footer-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+footer .footer-form button {
+  background-color: #0082c6;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+footer .footer-form button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+footer .footer-bottom {
+  flex-basis: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.software-solutions {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f4f4f4; /* Light gray background */
+}
+
+.software-solutions h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.software-solutions p {
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.software-solutions img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.software-buttons button {
+  background-color: #008000; /* Green background */
+  color: white;
+  border: none;
+  padding: 15px 30px; /* Increased padding for larger button */
+  font-size: 18px; /* Larger font size */
+  margin: 20px; /* Increased margin for more space around the buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.software-buttons button:hover {
+  background-color: #004d00; /* Darker green on hover */
+}
+
+@media (max-width: 768px) {
+  .software-solutions p {
+    padding: 0 20px; /* Add padding on smaller screens */
+  }
+}

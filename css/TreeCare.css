@@ -1,0 +1,255 @@
+* {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 50px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-nav a:hover {
+  background-color: #555;
+  border-radius: 5px;
+  color: #007bff;
+}
+
+/* Submenu styles */
+.menu-item {
+  position: relative;
+  display: inline-block;
+}
+
+.submenu {
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  display: none;
+}
+
+.submenu a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.submenu a:hover {
+  background-color: #555;
+}
+
+.menu-item:hover .submenu {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.journey-section {
+  background-color: #f4f4f4; /* Light background for the section */
+  padding: 20px;
+  text-align: center;
+}
+
+.journey-section h2 {
+  color: #0e0e0e;
+  margin-bottom: 10px;
+}
+
+.journey-section p {
+  color: #0b0b0b;
+  margin-bottom: 20px;
+}
+
+.journey-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.step {
+  background-color: #004080; /* Dark blue background for each step */
+  color: white;
+  padding: 20px;
+  flex: 1; /* Each step takes equal width */
+  margin: 0 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
+}
+
+.step h3 {
+  color: #ffffff; /* Light green for headers */
+}
+
+.step p {
+  color: white;
+  text-align: left;
+  font-size: 14px;
+}
+.step {
+  background-color: #004080; /* Original dark blue background */
+  color: white;
+  padding: 20px;
+  flex: 1;
+  margin: 0 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.step:hover {
+  background-color: #007bff; /* Blue color on hover */
+}
+@media (max-width: 768px) {
+  .journey-steps {
+    flex-direction: column;
+  }
+
+  .step {
+    margin-bottom: 10px; /* Add space between items on smaller screens */
+  }
+}
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+footer .footer-section {
+  flex: 1;
+  padding: 10px;
+}
+
+footer .footer-section h3 {
+  border-bottom: 2px solid #0082c6;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+footer .footer-section p,
+footer .footer-section a {
+  color: white;
+  text-decoration: none;
+}
+
+footer .footer-section .social-icons a {
+  margin-right: 10px;
+}
+
+footer .footer-section .social-icons img {
+  height: 20px;
+}
+
+footer .footer-form input,
+footer .footer-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+footer .footer-form button {
+  background-color: #0082c6;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+footer .footer-form button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+footer .footer-bottom {
+  flex-basis: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+}
+.software-solutions {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f4f4f4; /* Light gray background */
+}
+
+.software-solutions h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.software-solutions p {
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.software-solutions img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.software-buttons button {
+  background-color: #008000; /* Green background */
+  color: white;
+  border: none;
+  padding: 15px 30px; /* Increased padding for larger button */
+  font-size: 18px; /* Larger font size */
+  margin: 20px; /* Increased margin for more space around the buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.software-buttons button:hover {
+  background-color: #004d00; /* Darker green on hover */
+}
+
+@media (max-width: 768px) {
+  .software-solutions p {
+    padding: 0 20px; /* Add padding on smaller screens */
+  }
+}

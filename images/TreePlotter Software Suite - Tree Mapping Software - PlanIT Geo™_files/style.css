@@ -1,0 +1,309 @@
+.ancr-group > .ancr{
+    margin-bottom: 0 !important;
+}
+.ancr-group.ancr-sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+.ancr-group.ancr-normal {
+    z-index: 9999;
+}
+
+.ancr-group.ancr-pos-top{
+    top: 0;
+    z-index: 99999;
+}
+.ancr-group.ancr-pos-top > .ancr{
+    top: 0;
+    border-top: 0!important;
+}
+
+.ancr-group.ancr-pos-bottom{
+    bottom: 0;
+    z-index: 99999;
+}
+.ancr-group.ancr-pos-bottom > .ancr{
+    top: 0;
+    border-bottom: 0!important;
+}
+
+.ancr.ancr-wrap{
+    display: none;
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0.5em 1em;
+    border-left-width: 0 !important;
+    border-right-width: 0 !important;
+}
+
+/* Container */
+.ancr .ancr-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.ancr .ancr-container .ancr-cnt-inner{
+    display: flex;
+}
+.ancr .ancr-inner{
+    display: inline-block;
+}
+.ancr .ancr-inner > *{
+    margin-bottom: 1em;
+}
+.ancr .ancr-inner > *:first-child {
+    margin-top: 0;
+}
+.ancr .ancr-inner > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Content */
+.ancr .ancr-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ancr .ancr-content p {
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Layout */
+.ancr.ancr-lo-separate_column .ancr-content{
+    flex: 1;
+}
+.ancr.ancr-lo-separate_row .ancr-container .ancr-cnt-inner{
+    display: block;
+}
+.ancr.ancr-lo-separate_row .ancr-btn-wrap{
+    margin: 0.5em 0;
+}
+.ancr.ancr-lo-ticker.ancr-lo-ticker-anim .ancr-container{
+    animation: ancr-marquee 20s linear infinite;
+}
+.ancr.ancr-lo-ticker .ancr-container{ /* Ticker */
+    max-width: none !important;
+    display: inline-flex;
+    visibility: hidden;
+}
+.ancr.ancr-lo-ticker .ancr-content{
+    flex: none;
+    white-space: nowrap;
+}
+
+/* Alignment */
+.ancr.ancr-align-center .ancr-container .ancr-cnt-inner{
+    justify-content: center;
+    text-align: center;
+}
+.ancr.ancr-align-center .ancr-btn-wrap{
+    justify-content: center;
+}
+.ancr.ancr-align-right .ancr-container .ancr-cnt-inner{
+    justify-content: flex-end;
+    text-align: right;
+}
+.ancr.ancr-align-right .ancr-btn-wrap{
+    justify-content: flex-end;
+}
+
+/* Close button */
+.ancr .ancr-close-btn {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    color: inherit;
+    line-height: 0;
+    padding: 0.5em;
+    z-index: 999;
+}
+.ancr .ancr-close-btn:hover {
+    opacity: 0.5;
+}
+.ancr .ancr-close-icon{
+    width: 16px;
+    height: 16px;
+}
+.ancr.ancr-lo-separate_column.ancr-has-close-btn{
+    padding-right: 3.5em;
+}
+
+/* Buttons */
+.ancr .ancr-btn-wrap{
+    display: inline-block;
+    margin: 0 0 0 1em;
+    line-height: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.ancr .ancr-btn {
+    padding: 0.5em 1em;
+    display: inline-block;
+    margin: 0 0.5em 0 0;
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-decoration: none !important;
+    --animate-duration: 1s;
+}
+.ancr .ancr-btn:last-child {
+    margin-right: 0;
+}
+.ancr .ancr-btn:hover{
+    filter: brightness(0.8);
+}
+.ancr .ancr-btn:active{
+    filter: brightness(0.5);
+}
+.ancr .ancr-btn.animate__infinite:hover{
+    animation: step-end;
+}
+
+/* Spacer */
+.ancr-top-spacer{
+    transition: height 0.5s;
+}
+
+/* Shortcode */
+.ancr-shortcode {
+    margin-bottom: 1em;
+}
+
+/* Countdown timer */
+.ancr-countdown-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ancr-countdown{
+    display: inline-block;
+    padding: 0 0.5em;
+    margin: 0 0.5em;
+    border-radius: 0.5em;
+    vertical-align: middle;
+}
+.ancrcd-end-text{
+    display: none;
+}
+.ancrcd-timer {
+    display: flex;
+    align-items: center;
+}
+.ancrcd-timer > .ancrcd-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0.25em;
+    border-radius: 0.25em;
+}
+.ancrcd-timer > .ancrcd-item > span {
+    line-height: 1;
+    font-weight: bold;
+}
+.ancrcd-timer > .ancrcd-item > em {
+    font-size: 0.5em;
+    line-height: 1;
+    padding: 0.25em 0;
+    font-style: normal;
+}
+.ancrcd-timer > .ancrcd-item.ancrcd-hide{
+    display: none;
+}
+.ancrcd-timer > .ancrcd-item.ancrcd-hide + .ancrcd-sep{
+    display: none;
+}
+.ancrcd-sep {
+    padding: 0 0.25em;
+}
+.ancr-lo-separate_row .ancr-countdown-wrap{
+    display: block;
+    margin: 0.5em 0;
+}
+
+/* Countdown timer - text style */
+.ancrcd-text-hide .ancrcd-item em{
+    display: none;
+}
+.ancrcd-text-above .ancrcd-item {
+    flex-direction: column-reverse;
+}
+.ancrcd-text-inline .ancrcd-item{
+    flex-direction: row;
+    align-items: baseline;
+}
+.ancrcd-text-inline .ancrcd-item em{
+    margin-left: 0.5em;
+}
+
+/* Multi */
+.ancr-multi-tick .ancr-cnt-inner{
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.ancr-multi-tick .ancr-cnt-wrap > div{
+    width: 100% !important;
+}
+.ancr-multi.ancr-multi-w-arrow {
+    padding-left: 3.5em;
+    padding-right: 4.5em;
+}
+
+/* Arrows */
+.ancr .ancr-aw-icon{
+    width: 24px;
+    height: 24px;
+}
+.ancr .ancr-aw{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+.ancr .ancr-aw:hover{
+    opacity: 0.8;
+}
+.ancr .ancr-aw-l{
+    left: -25px;
+    transform: translateX(-100%);
+}
+.ancr .ancr-aw-r{
+    right: -25px;
+    transform: translateX(100%);
+}
+
+@keyframes ancr-marquee {
+    0% {
+      transform: translateX(var(--ancr-width));
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .ancr-lo-same_row .ancr-container .ancr-cnt-inner{
+        display: block;
+    }
+    .ancr-lo-same_row .ancr-btn-wrap{
+        margin: 1em 0;
+    }
+    .ancr-lo-separate_column .ancr-container .ancr-cnt-inner{
+        display: block;
+    }
+    .ancr-lo-separate_column .ancr-btn-wrap{
+        margin: 0.5em 0;
+    }
+    .ancr-countdown-wrap{
+        display: inline-block;
+        margin: 0.5em 0;
+    }
+}

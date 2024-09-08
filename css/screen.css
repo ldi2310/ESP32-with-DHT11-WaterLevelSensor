@@ -1,0 +1,573 @@
+:root {
+    --container-color: rgb(67, 67, 67);
+    --form-color: linear-gradient(to right,#69d37e 45%, #bedc5f 90%);
+    --gauge-color: rgb(115, 115, 115);
+}
+
+body {
+    color: #fff;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    background: rgb(29, 29, 29) no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        width: 100%;
+    }
+}
+
+.main {
+    color: #fff;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    background: rgb(29, 29, 29) no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .main {
+        width: 100%;
+    }
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background: var(--gauge-color);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background: var(--form-color);
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    background: var(--form-color);
+    color: white;
+}
+
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+@media screen and (max-width: 1000px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    font-size: 40px; /* 2.5rem */
+}
+
+.read {
+    padding: 16px; /* 1rem */
+    margin: 0 0 32px 0; /* 0 0 2rem 0 */
+    background: var(--container-color);
+    border-radius: 10px; /* Bo tròn góc các phần tử */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng mờ nhẹ */
+}
+
+input {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+input[type="number"] {
+    background: #FFF;
+    width: 340px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 25px 0 0 25px;
+}
+
+input[type="submit"] {
+    position: relative;
+    left: -5px;
+    border-radius: 0 25px 25px 0;
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: var(--form-color);
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right,#5bf179 45%, #d0fd3b 90%);
+}
+
+@media screen and (max-width: 600px) {
+    .read {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .vl {
+        display: grid;
+    grid-template-rows: auto auto; /* Hai cột */
+    align-items: center;
+    }
+    input[type="number"] {
+        border-radius: 25px 25px 0 0;
+    }
+    input[type="submit"] {
+        width: 340px;
+        border-radius: 0 0 25px 25px;
+        margin-left: 5px;
+    }
+}
+
+h1 {
+    font-size: 32px; /* 2rem */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background: var(--container-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm đổ bóng mờ */
+    padding: 20px;
+    margin: 0 0 32px 0;
+}
+
+.container {
+    gap: 10px;
+    background: var(--form-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm đổ bóng mờ */
+    padding-top: 10px;
+}
+
+.gauge--1, .gauge--2, .gauge--3 {
+    background: var(--gauge-color);
+    padding: 10px; /* Thêm khoảng cách bên trong các phần tử */
+    border-radius: 10px; /* Bo tròn góc các phần tử */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng mờ nhẹ */
+    margin: 5px; /* Giảm khoảng cách giữa các phần tử */
+}
+
+.gauge--1 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.gauge--2 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.gauge--3 {
+    grid-column: 1;
+    grid-row: span 2;
+}
+
+.chart-container {
+    width: 400px;
+    grid-column: 3;
+    grid-row: 1;
+    background: var(--gauge-color);
+    padding: 10px; /* Thêm khoảng cách bên trong các phần tử */
+    border-radius: 10px; /* Bo tròn góc các phần tử */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng mờ nhẹ */
+    margin: 5px; /* Giảm khoảng cách giữa các phần tử */
+}
+
+.chart-container1 {
+    width: 400px;
+    grid-column: 3;
+    grid-row: 2;
+    background: var(--gauge-color);
+    padding: 10px; /* Thêm khoảng cách bên trong các phần tử */
+    border-radius: 10px; /* Bo tròn góc các phần tử */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng mờ nhẹ */
+    margin: 5px; /* Giảm khoảng cách giữa các phần tử */
+}
+
+#toggleButton1 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#toggleButton2 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background: var(--container-color);
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        margin: 0 0 32px 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .gauge--1 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    .gauge--2 {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    
+    .gauge--3 {
+        grid-column: 1;
+        grid-row: span 2;
+    }
+    
+    .chart-container {
+        width: 97%;
+        grid-column: span 2;
+        grid-row: 3;
+    }
+    
+    .chart-container1 {
+        width: 97%;
+        grid-column: span 2;
+        grid-row: 4;
+    }
+    
+    #toggleButton1 {
+        grid-column: 1;
+        grid-row: 5;
+    }
+    
+    #toggleButton2 {
+        grid-column: 2;
+        grid-row: 5;
+    }
+}
+
+.banner {
+    width: 240px;
+}
+
+.mask {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 200px; /* 12.5rem */
+    height: 100px; /* 6.25rem */
+    margin: 20px; /* 1.25rem */
+}
+
+.bench {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px; /* 1.25rem */
+}
+
+.box {
+    position: relative;
+    width: 200px; /* 12.5rem */
+    height: 458px; /* 6.25rem */
+    background: var(--gauge-color);
+}
+
+.box .glass {
+    width: 200px; /* 6.375rem */
+    height: 190px; /* 6rem */
+    background-color: #0043bc;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    opacity: .8;
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+}
+
+.bor {
+    width: 200px; /* 6.375rem */
+    height: 190px; /* 6rem */
+    background-color: #005eff4e;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    opacity: .8;
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.box .glass img,
+.box img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    height: 350px;
+}
+
+.wave {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #005eff;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+    transform: translateY(-10%);
+    transition: transform 0.3s ease;
+}
+
+.wave::before, .wave::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: #000;
+}
+
+.wave::before {
+    border-radius: 45%;
+    background: var(--gauge-color);
+    animation: animate 5s linear infinite;
+}
+
+.wave::after {
+    border-radius: 40%;
+    background: rgba(255, 255, 255, .5);
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+
+.semi-circle {
+    position: relative;
+    display: block;
+    width: 200px; /* 12.5rem */
+    height: 100px; /* 6.25rem */
+    background: linear-gradient(to right, #3498db 0%, #05b027 33%, #f1c40f 70%, #c0392b 100%);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.semi-circle::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 2;
+    display: block;
+    width: 140px; /* 8.75rem */
+    height: 70px; /* 4.375rem */
+    margin-left: -70px; /* -4.375rem */
+    background: var(--gauge-color);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.semi-circle--mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px; /* 12.5rem */
+    height: 200px; /* 12.5rem */
+    background: transparent;
+    transform: rotate(120deg);
+    transform-origin: center center;
+    backface-visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.semi-circle--mask::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: block;
+    width: 202px; /* 12.625rem */
+    height: 102px; /* 6.375rem */
+    margin: -1px 0 0 -1px;
+    background: var(--gauge-color);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.gauge--2 .semi-circle {
+    background: #00a8f0;
+}
+
+.gauge--2 .semi-circle--mask {
+    transform: rotate(20deg);
+}
+
+#toggleButton1, #toggleButton2 {
+    position: relative;
+    display: block;
+    width: 320px;
+    height: 160px;
+    border-radius: 160px;
+    background: var(--gauge-color);
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+                inset 0 8px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -4px -4px rgba(0, 0, 0, 0.1);
+}
+
+#toggleButton1 .indicator1, #toggleButton2 .indicator2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(to bottom, var(--gauge-color), var(--container-color));
+    border-radius: 50%;
+    transform: scale(0.9);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+                inset 0 4px 4px rgba(0, 0, 0, 0.2),
+                inset 0 -4px 4px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+#toggleButton1.active, #toggleButton2.active {
+    background: var(--form-color);
+}
+
+#toggleButton1.active .indicator1, #toggleButton2.active .indicator2 {
+    left: 160px;
+}
+
+.switch1, .switch2 {
+    display: none; /* Ẩn switch mặc định */
+}
+
+#toggleButton1.active + #switchContainer1, #toggleButton2.active + #switchContainer2 {
+    position: relative;
+    display: block;
+    width: 320px;
+    height: 160px;
+    border-radius: 160px;
+    background: var(--gauge-color);
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+                inset 0 8px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -4px -4px rgba(0, 0, 0, 0.1);
+}
+
+#toggleButton1.active + #switchContainer1 .switch1, #toggleButton2.active + #switchContainer2 .switch2{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(to bottom, var(--gauge-color), var(--container-color));
+    border-radius: 50%;
+    transform: scale(0.9);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+                inset 0 4px 4px rgba(0, 0, 0, 0.2),
+                inset 0 -4px 4px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+#toggleButton1.active + #switchContainer1.active, #toggleButton2.active + #switchContainer2.active {
+    background: var(--form-color);
+}
+
+#toggleButton1.active + #switchContainer1.active .switch1, #toggleButton2.active + #switchContainer2.active .switch2 {
+    left: 160px;
+}
+
+#tableReadings {
+    border-collapse: collapse;
+}
+
+#tableReadings td,
+#tableReadings th {
+    border: 1px solid #c0c0c0;
+    padding: 10px;
+}
+
+#tableReadings tr:nth-child(even) {
+    background-color: #999999;
+}
+
+#tableReadings tr:hover {
+    background-color: #ddd;
+}
+
+#tableReadings th {
+    padding: 10px;
+    background-color: #00a22e;
+    color: white;
+}
