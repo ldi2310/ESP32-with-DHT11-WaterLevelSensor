@@ -2,6 +2,9 @@ Embedded programming with ESP32 using C++ to collect data from DHT11 and WaterLe
 - Flash the ESP32 with [codehost.ino]
 - screen.php is main wedsite
 - API from database
+  + Data update form ESP32
+  + Read date from SQL
+  + Control Relay
   
 # User Interface
 ![Screenshot 2024-09-11 211732](https://github.com/user-attachments/assets/057439e0-8a70-4643-ac14-0e2c484c0dbd)
